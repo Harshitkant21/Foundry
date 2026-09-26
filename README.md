@@ -1,9 +1,9 @@
-# Foundry (`create-ai-workspace`)
+# Foundry (`create-foundry-workspace`)
 
 > **Deterministic, local-first, zero-LLM CLI for initializing AI-ready software development workspaces.**
 
 [![CI](https://github.com/Harshitkant21/Foundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Harshitkant21/Foundry/actions)
-[![npm version](https://img.shields.io/npm/v/create-ai-workspace.svg?style=flat&color=CB3837)](https://www.npmjs.com/package/create-ai-workspace)
+[![npm version](https://img.shields.io/npm/v/create-foundry-workspace.svg?style=flat&color=CB3837)](https://www.npmjs.com/package/create-foundry-workspace)
 [![Node: >=18.0.0](https://img.shields.io/badge/Node->=18.0.0-green.svg)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zero-LLM Runtime](https://img.shields.io/badge/Architecture-Deterministic%20Zero--LLM-8A2BE2.svg)](docs/ARCHITECTURE.md)
@@ -14,10 +14,11 @@
 
 Modern developers increasingly rely on AI coding assistants such as **Cursor**, **Claude Code**, and **GitHub Copilot**. However, when starting a new project, developers are forced to manually author and repeatedly recreate AI instruction files, project rules, context files, and guardrails.
 
-**Foundry** is an open-source, deterministic developer tool distributed via npm as **`create-ai-workspace`**. When starting a new project, running:
+**Foundry** is an open-source, deterministic developer tool distributed via npm as **`create-foundry-workspace`**. When starting a new project, running:
 
 ```bash
-npx create-ai-workspace
+npx create-foundry-workspace
+# or: npm create foundry-workspace
 ```
 
 asks a minimal set of meaningful project initialization questions and deterministically scaffolds an **AI-ready software workspace** based on predefined, versioned, and maintainable templates.
@@ -51,17 +52,18 @@ Output is 100% deterministic: given the same inputs and version, the generated w
 
 Initialize an AI-ready workspace in your current directory:
 ```bash
-npx create-ai-workspace
+npx create-foundry-workspace
+# or: npm create foundry-workspace
 ```
 
 Or target a specific folder:
 ```bash
-npx create-ai-workspace ./my-new-project
+npx create-foundry-workspace ./my-new-project
 ```
 
 ### Non-Interactive (CI / Scripted) Usage
 ```bash
-npx create-ai-workspace ./my-new-service \
+npx create-foundry-workspace ./my-new-service \
   --name my-new-service \
   --type api \
   --lang python \

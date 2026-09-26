@@ -2,7 +2,7 @@
 
 ## 1. System Overview
 
-Foundry (published on npm as `create-ai-workspace`) is designed around a **pure functional core and a side-effect shell**. The generation pipeline operates strictly in memory, producing an immutable array of file definitions that are verified and written atomically by an isolated I/O layer.
+Foundry (published on npm as `create-foundry-workspace`) is designed around a **pure functional core and a side-effect shell**. The generation pipeline operates strictly in memory, producing an immutable array of file definitions that are verified and written atomically by an isolated I/O layer.
 
 ```text
 ┌────────────────────────────────────────────────────────┐

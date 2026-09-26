@@ -29,7 +29,7 @@ describe('Foundry Self-Governing Dogfooding Contract', () => {
       adapters: ['agents', 'cursor', 'claude', 'copilot'],
     });
 
-    expect(config.project.name).toBe('create-ai-workspace');
+    expect(config.project.name).toBe('create-foundry-workspace');
     expect(config.project.type).toBe('cli');
     expect(config.project.language).toBe('typescript');
     expect(config.strictness).toBe('strict');

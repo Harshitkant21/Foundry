@@ -29,7 +29,7 @@ export async function runInteractivePrompts(
     };
   }
 
-  p.intro('Foundry (create-ai-workspace) v1.0.0');
+  p.intro('Foundry (create-foundry-workspace) v1.0.0');
 
   // Step 1: Project Name
   const initialName = defaults.name || (detected.name !== 'my-workspace' && detected.name !== 'Extentions' ? detected.name : 'my-app');

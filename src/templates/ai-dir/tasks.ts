@@ -28,6 +28,6 @@ Operational scratchpad for human engineers and AI coding assistants to queue, cl
 ---
 
 ## Completed Tasks
-- [x] Initialized AI Workspace via Foundry (\`create-ai-workspace\`)
+- [x] Initialized AI Workspace via Foundry (\`create-foundry-workspace\`)
 `;
 }

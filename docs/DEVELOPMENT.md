@@ -61,7 +61,7 @@ npm pack
 
 # 2. Test the packaged tarball from an external directory
 cd ..
-npx --package ./Foundry/create-ai-workspace-1.0.0.tgz create-ai-workspace
+npx --package ./Foundry/create-foundry-workspace-1.0.0.tgz create-foundry-workspace
 
 # 3. Perform a dry-run publish (validates credentials without uploading)
 npm publish --dry-run

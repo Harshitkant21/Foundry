@@ -1,11 +1,12 @@
 {
-  "name": "create-ai-workspace",
+  "name": "create-foundry-workspace",
   "version": "1.0.0",
   "description": "Deterministic, zero-LLM CLI for initializing AI-ready software development workspaces",
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
-    "create-ai-workspace": "./bin/index.js"
+    "create-foundry-workspace": "./bin/index.js",
+    "foundry": "./bin/index.js"
   },
   "files": [
     "dist",

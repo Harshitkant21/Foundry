@@ -13,7 +13,7 @@ export async function runCli(argv: string[] = process.argv): Promise<void> {
   const program = new Command();
 
   program
-    .name('create-ai-workspace')
+    .name('create-foundry-workspace')
     .description('Deterministic, zero-LLM CLI for initializing AI-ready software development workspaces')
     .version('1.0.0')
     .argument('[directory]', 'Target directory to initialize')
@@ -85,7 +85,7 @@ export async function runCli(argv: string[] = process.argv): Promise<void> {
   }
 
   // 3. Resolve target directory:
-  // - If an explicit directory argument was passed (e.g. `create-ai-workspace .` or `create-ai-workspace my-dir`), resolve that.
+  // - If an explicit directory argument was passed (e.g. `create-foundry-workspace .` or `create-foundry-workspace my-dir`), resolve that.
   // - If detected in an existing project (e.g. package.json exists in cwd) or project name matches current directory name, initialize in cwd (`.`).
   // - Otherwise, create a new subfolder named after the project in cwd.
   let targetDir: string;

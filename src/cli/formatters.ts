@@ -3,7 +3,7 @@ import { WriteResult } from '../io/writer.js';
 
 export function formatDryRunBanner(name: string, targetDir: string, files: GeneratedFile[]): void {
   console.log(`\n============================================================`);
-  console.log(`  Foundry (create-ai-workspace) — DRY RUN PREVIEW`);
+  console.log(`  Foundry (create-foundry-workspace) — DRY RUN PREVIEW`);
   console.log(`============================================================`);
   console.log(`Project:          ${name}`);
   console.log(`Target Directory: ${targetDir}`);

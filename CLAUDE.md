@@ -1,4 +1,4 @@
-# Claude Code Guidelines — `create-ai-workspace`
+# Claude Code Guidelines — `create-foundry-workspace`
 
 ## Key CLI Commands
 - `npm run build` — Compile TypeScript to `dist/`

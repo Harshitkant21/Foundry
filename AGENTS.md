@@ -1,6 +1,6 @@
-# `create-ai-workspace` — AI Workspace Reference Contract
+# `create-foundry-workspace` — AI Workspace Reference Contract
 
-Welcome to `create-ai-workspace`. This repository is both the implementation codebase and the primary reference environment for the AI Workspace standard.
+Welcome to `create-foundry-workspace`. This repository is both the implementation codebase and the primary reference environment for the AI Workspace standard.
 
 ## Core Architectural Guardrails
 

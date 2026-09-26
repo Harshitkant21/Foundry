@@ -8,7 +8,7 @@
 
 ## Reporting a Vulnerability
 
-The Foundry project and `create-ai-workspace` CLI take the security and integrity of developer environments seriously.
+The Foundry project and `create-foundry-workspace` CLI take the security and integrity of developer environments seriously.
 
 Because Foundry generates code templates and configuration files that developers commit to their repositories:
 - The CLI contains **zero runtime dependencies on external AI APIs or remote endpoints**.

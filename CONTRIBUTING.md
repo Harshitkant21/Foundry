@@ -1,4 +1,4 @@
-# Contributing to Foundry (`create-ai-workspace`)
+# Contributing to Foundry (`create-foundry-workspace`)
 
 Thank you for your interest in contributing to Foundry! This document outlines the development workflow, architecture principles, and contribution guidelines.
 

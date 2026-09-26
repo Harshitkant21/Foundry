@@ -1,7 +1,7 @@
 version: "1"
 
 project:
-  name: "create-ai-workspace"
+  name: "create-foundry-workspace"
   type: "cli"
   language: "typescript"
 

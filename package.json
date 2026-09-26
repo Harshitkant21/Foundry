@@ -1,7 +1,7 @@
 {
   "name": "create-foundry-workspace",
   "version": "1.0.0",
-  "description": "Deterministic, zero-LLM CLI for initializing AI-ready software development workspaces",
+  "description": "A deterministic, local-first CLI for creating structured, AI-ready developer workspaces.",
   "type": "module",
   "main": "./dist/index.js",
   "bin": {
@@ -25,13 +25,16 @@
   },
   "keywords": [
     "ai",
+    "ai-tools",
     "cli",
+    "developer-tools",
+    "scaffolding",
     "workspace",
+    "developer-workflow",
     "agents",
     "cursor",
     "claude",
     "copilot",
-    "scaffolding",
     "templates"
   ],
   "author": "Harshit Kant",

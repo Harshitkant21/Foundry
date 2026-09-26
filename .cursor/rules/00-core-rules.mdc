@@ -1,0 +1,11 @@
+---
+description: Core Architecture Rules for create-ai-workspace CLI
+globs: src/**/*.ts
+alwaysApply: true
+---
+# Core Rules for `create-ai-workspace`
+
+1. **Zero LLM / Zero Network:** No external API calls or LLM dependencies.
+2. **Deterministic Output:** Same flags = identical byte output. No dynamic dates/timestamps.
+3. **Strict TypeScript:** No `any`. Use Zod schema validation.
+4. **Minimal Output:** Scaffold only essential, non-empty files.

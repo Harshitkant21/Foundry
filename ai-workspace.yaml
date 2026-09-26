@@ -1,0 +1,14 @@
+version: "1"
+
+project:
+  name: "create-ai-workspace"
+  type: "cli"
+  language: "typescript"
+
+strictness: "strict"
+
+adapters:
+  - cursor
+  - claude
+  - copilot
+  - agents

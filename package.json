@@ -1,0 +1,60 @@
+{
+  "name": "create-ai-workspace",
+  "version": "1.0.0",
+  "description": "Deterministic, zero-LLM CLI for initializing AI-ready software development workspaces",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "create-ai-workspace": "./bin/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/bin.ts",
+    "prepublishOnly": "npm run build && npm test",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "ai",
+    "cli",
+    "workspace",
+    "agents",
+    "cursor",
+    "claude",
+    "copilot",
+    "scaffolding",
+    "templates"
+  ],
+  "author": "Harshit Kant",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harshitkant21/Foundry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Harshitkant21/Foundry/issues"
+  },
+  "homepage": "https://github.com/Harshitkant21/Foundry#readme",
+  "license": "MIT",
+  "dependencies": {
+    "@clack/prompts": "^0.8.2",
+    "commander": "^12.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

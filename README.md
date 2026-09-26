@@ -141,6 +141,10 @@ For deeper architectural details, review the internal documentation:
 ## Development & Testing
 
 ```bash
+# Clone the repository
+git clone https://github.com/Harshitkant21/Foundry.git
+cd Foundry
+
 # Install dependencies
 npm install
 

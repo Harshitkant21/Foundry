@@ -2,8 +2,11 @@
 
 > **Deterministic, local-first, zero-LLM CLI for initializing AI-ready software development workspaces.**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/Harshitkant21/Foundry/actions/workflows/ci.yml/badge.svg)](https://github.com/Harshitkant21/Foundry/actions)
+[![npm version](https://img.shields.io/npm/v/create-ai-workspace.svg?style=flat&color=CB3837)](https://www.npmjs.com/package/create-ai-workspace)
 [![Node: >=18.0.0](https://img.shields.io/badge/Node->=18.0.0-green.svg)](package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Zero-LLM Runtime](https://img.shields.io/badge/Architecture-Deterministic%20Zero--LLM-8A2BE2.svg)](docs/ARCHITECTURE.md)
 
 ---
 

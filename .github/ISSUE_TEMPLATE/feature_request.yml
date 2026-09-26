@@ -1,0 +1,30 @@
+name: 💡 Feature Request or Adapter Proposal
+description: Suggest an idea, new adapter, or architectural enhancement
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Foundry is a deterministic, local-first, zero-LLM workspace generator. Feature proposals must respect the **Zero-LLM Runtime** and **Bit-for-Bit Determinism** principles.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Motivation
+      description: Is your feature request related to a specific workflow problem or limitation?
+      placeholder: "I'm always frustrated when..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution / Adapter Spec
+      description: Describe the solution, flag, or new tool adapter you'd like to see added.
+      placeholder: "Add an adapter for Tool X that outputs file Y with deterministic context..."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you've evaluated.

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: GitHub Discussions
+    url: https://github.com/Harshitkant21/Foundry/discussions
+    about: Ask questions, share your workflows, and discuss AI workspace patterns.

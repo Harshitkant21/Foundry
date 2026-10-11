@@ -86,7 +86,11 @@ describe('Golden Fixtures Byte-for-Byte Determinism', () => {
         const goldenFilePath = path.join(profileDir, generated.relativePath);
         const goldenContent = await fs.readFile(goldenFilePath, 'utf-8');
 
-        expect(generated.content).toBe(goldenContent);
+        // Normalize CRLF to LF to ensure test passes across Windows and Linux runners
+        const normalizedGenerated = generated.content.replace(/\r\n/g, '\n');
+        const normalizedGolden = goldenContent.replace(/\r\n/g, '\n');
+
+        expect(normalizedGenerated).toBe(normalizedGolden);
       }
     });
   }

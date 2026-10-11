@@ -1,6 +1,6 @@
 {
   "name": "create-foundry-workspace",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deterministic, local-first CLI for scaffolding AI-ready software workspaces.",
   "type": "module",
   "main": "./dist/index.js",

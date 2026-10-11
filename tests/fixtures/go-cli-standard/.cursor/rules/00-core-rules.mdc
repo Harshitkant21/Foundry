@@ -1,0 +1,34 @@
+---
+description: Core Architecture Rules for go-cli-tool
+globs: *
+alwaysApply: true
+---
+# Cursor Core Rules — go-cli-tool
+
+## Project Profile
+- Application: go-cli-tool (cli)
+- Language: go
+- Strictness: standard
+
+## Standard Commands
+- Build: `go build ./...`
+- Test:  `go test -v ./...`
+
+## Architectural Guidelines
+### CLI Tool Architecture
+- Provide intuitive argument and flag parsing with comprehensive `--help` menus.
+- Support both interactive terminal prompts and non-interactive scripted/CI execution modes.
+- Implement structured exit codes and send human messages to stdout and diagnostics to stderr.
+
+## Language Conventions
+### Go Conventions
+- Handle every returned error explicitly; never discard errors with `_`.
+- Use standard Go project layout (`cmd/`, `internal/`, `pkg/`).
+- Favor composition over inheritance and keep interfaces small.
+
+## Guardrails
+### General Guardrails
+- **Code Quality:** Maintain clean, modular code with consistent naming conventions and separation of concerns.
+- **Verification:** Run the project test suite and linter before declaring any implementation task complete.
+- **Security:** Never commit credentials, API keys, tokens, or raw secrets to version control.
+- **Dependencies:** Avoid introducing unnecessary external dependencies. Prefer built-in language capabilities.

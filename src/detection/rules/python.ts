@@ -1,30 +1,14 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { ProjectFileSystem } from '../../io/scanner.js';
 import { DetectionCandidate } from './node.js';
 
-export async function detectPython(targetDir: string): Promise<DetectionCandidate | null> {
-  const pyproject = path.join(targetDir, 'pyproject.toml');
-  const requirements = path.join(targetDir, 'requirements.txt');
-  const setupPy = path.join(targetDir, 'setup.py');
+export async function detectPython(fs: ProjectFileSystem): Promise<DetectionCandidate | null> {
+  const hasPyproject = await fs.exists('pyproject.toml');
+  const hasReqs = await fs.exists('requirements.txt');
+  const hasSetup = await fs.exists('setup.py');
 
-  let hasPython = false;
-
-  try {
-    await fs.access(pyproject);
-    hasPython = true;
-  } catch {}
-
-  try {
-    await fs.access(requirements);
-    hasPython = true;
-  } catch {}
-
-  try {
-    await fs.access(setupPy);
-    hasPython = true;
-  } catch {}
-
-  if (!hasPython) return null;
+  if (!hasPyproject && !hasReqs && !hasSetup) {
+    return null;
+  }
 
   return {
     language: 'python',

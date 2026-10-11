@@ -1,0 +1,14 @@
+version: "1"
+
+project:
+  name: "python-api-service"
+  type: "api"
+  language: "python"
+
+repository: "github"
+strictness: "standard"
+
+adapters:
+  - agents
+  - claude
+  - copilot

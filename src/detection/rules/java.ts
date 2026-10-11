@@ -1,30 +1,14 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { ProjectFileSystem } from '../../io/scanner.js';
 import { DetectionCandidate } from './node.js';
 
-export async function detectJava(targetDir: string): Promise<DetectionCandidate | null> {
-  const pomXml = path.join(targetDir, 'pom.xml');
-  const gradle = path.join(targetDir, 'build.gradle');
-  const gradleKts = path.join(targetDir, 'build.gradle.kts');
+export async function detectJava(fs: ProjectFileSystem): Promise<DetectionCandidate | null> {
+  const hasPom = await fs.exists('pom.xml');
+  const hasGradle = await fs.exists('build.gradle');
+  const hasGradleKts = await fs.exists('build.gradle.kts');
 
-  let hasJava = false;
-
-  try {
-    await fs.access(pomXml);
-    hasJava = true;
-  } catch {}
-
-  try {
-    await fs.access(gradle);
-    hasJava = true;
-  } catch {}
-
-  try {
-    await fs.access(gradleKts);
-    hasJava = true;
-  } catch {}
-
-  if (!hasJava) return null;
+  if (!hasPom && !hasGradle && !hasGradleKts) {
+    return null;
+  }
 
   return {
     language: 'java',

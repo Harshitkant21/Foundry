@@ -1,0 +1,15 @@
+version: "1"
+
+project:
+  name: "ts-fullstack-app"
+  type: "fullstack"
+  language: "typescript"
+
+repository: "github"
+strictness: "strict"
+
+adapters:
+  - agents
+  - cursor
+  - claude
+  - copilot

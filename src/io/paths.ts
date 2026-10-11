@@ -16,7 +16,8 @@ export function resolveSafePath(baseDir: string, relativePath: string): string {
   const resolvedBase = path.resolve(baseDir);
   const resolvedTarget = path.resolve(resolvedBase, relativePath);
 
-  if (!resolvedTarget.startsWith(resolvedBase)) {
+  const rel = path.relative(resolvedBase, resolvedTarget);
+  if (rel.startsWith('..') || path.isAbsolute(rel)) {
     throw new Error(`Security Exception: Target path '${relativePath}' traverses outside base directory.`);
   }
 

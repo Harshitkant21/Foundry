@@ -6,7 +6,7 @@
 [![npm version](https://img.shields.io/npm/v/create-foundry-workspace.svg?style=flat&color=CB3837)](https://www.npmjs.com/package/create-foundry-workspace)
 [![Node: >=18.0.0](https://img.shields.io/badge/Node->=18.0.0-green.svg)](package.json)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Zero-LLM Runtime](https://img.shields.io/badge/Architecture-Deterministic%20Zero--LLM-8A2BE2.svg)](docs/ARCHITECTURE.md)
+[![Zero-LLM Runtime](https://img.shields.io/badge/Architecture-Deterministic%20Zero--LLM-8A2BE2.svg)](docs/architecture/ARCHITECTURE.md)
 
 ---
 
@@ -135,11 +135,13 @@ my-project/
 
 Foundry strictly practices **dogfooding**. The Foundry repository itself is governed by the same `ai-workspace.yaml`, `AGENTS.md`, `CLAUDE.md`, `.cursor/`, and `.github/` files that it generates for users.
 
-For deeper architectural details, review the internal documentation:
-- [docs/SPECIFICATION.md](file:///d:/Extentions/Foundry/docs/SPECIFICATION.md) — Formal specification of the AI Workspace contract.
-- [docs/ARCHITECTURE.md](file:///d:/Extentions/Foundry/docs/ARCHITECTURE.md) — System architecture, module boundaries, and pure core pipeline.
-- [docs/ADAPTERS.md](file:///d:/Extentions/Foundry/docs/ADAPTERS.md) — Adapter interface specification and registry design.
-- [docs/DEVELOPMENT.md](file:///d:/Extentions/Foundry/docs/DEVELOPMENT.md) — Developer setup and testing guide.
+For deeper architectural details and future roadmap, review the internal documentation:
+- [docs/README.md](docs/README.md) — Documentation index and repository guide.
+- [docs/specifications/SPECIFICATION.md](docs/specifications/SPECIFICATION.md) — Formal specification of the AI Workspace contract.
+- [docs/architecture/ARCHITECTURE.md](docs/architecture/ARCHITECTURE.md) — System architecture, module boundaries, and pure core pipeline.
+- [docs/architecture/ADAPTERS.md](docs/architecture/ADAPTERS.md) — Adapter interface specification and registry design.
+- [docs/development/DEVELOPMENT.md](docs/development/DEVELOPMENT.md) — Developer setup and testing guide.
+- [docs/planning/FOUNDRY_AUDIT_AND_ROADMAP.md](docs/planning/FOUNDRY_AUDIT_AND_ROADMAP.md) — Comprehensive repository audit, architecture evaluation, and phased roadmap (Proposed / Working Plan — Pending Review).
 
 ---
 

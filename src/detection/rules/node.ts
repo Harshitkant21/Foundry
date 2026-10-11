@@ -1,6 +1,5 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
 import { AppType, Language } from '../../config/schema.js';
+import { ProjectFileSystem } from '../../io/scanner.js';
 
 export interface DetectionCandidate {
   name?: string;
@@ -8,10 +7,9 @@ export interface DetectionCandidate {
   type?: AppType;
 }
 
-export async function detectNode(targetDir: string): Promise<DetectionCandidate | null> {
-  const pkgPath = path.join(targetDir, 'package.json');
+export async function detectNode(fs: ProjectFileSystem): Promise<DetectionCandidate | null> {
   try {
-    const raw = await fs.readFile(pkgPath, 'utf-8');
+    const raw = await fs.readFile('package.json');
     const pkg = JSON.parse(raw);
 
     const name = typeof pkg.name === 'string' ? pkg.name.replace(/^@[^/]+\//, '') : undefined;
@@ -25,10 +23,9 @@ export async function detectNode(targetDir: string): Promise<DetectionCandidate 
       language = 'typescript';
     }
 
-    try {
-      await fs.access(path.join(targetDir, 'tsconfig.json'));
+    if (await fs.exists('tsconfig.json')) {
       language = 'typescript';
-    } catch {}
+    }
 
     let type: AppType = 'fullstack';
     if (pkg.bin) {

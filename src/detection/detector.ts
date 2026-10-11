@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { DEFAULT_APP_TYPE, DEFAULT_LANGUAGE } from '../config/defaults.js';
 import { AppType, Language } from '../config/schema.js';
+import { NodeProjectFileSystem, ProjectFileSystem } from '../io/scanner.js';
 import { detectGo } from './rules/go.js';
 import { detectJava } from './rules/java.js';
 import { detectNode } from './rules/node.js';
@@ -16,13 +17,17 @@ export interface DetectedEnvironment {
 
 /**
  * Deterministically inspects target directory markers to infer project defaults.
- * Completely decoupled from CLI prompt parsing.
+ * Decoupled from physical disk I/O via the ProjectFileSystem abstraction.
  */
-export async function detectProjectEnvironment(targetDir: string): Promise<DetectedEnvironment> {
+export async function detectProjectEnvironment(
+  targetDir: string,
+  projectFs?: ProjectFileSystem
+): Promise<DetectedEnvironment> {
+  const fs = projectFs ?? new NodeProjectFileSystem(targetDir);
   const fallbackName = path.basename(path.resolve(targetDir)) || 'my-workspace';
 
   // Run detectors in priority order
-  const node = await detectNode(targetDir);
+  const node = await detectNode(fs);
   if (node) {
     return {
       name: node.name || fallbackName,
@@ -32,7 +37,7 @@ export async function detectProjectEnvironment(targetDir: string): Promise<Detec
     };
   }
 
-  const rust = await detectRust(targetDir);
+  const rust = await detectRust(fs);
   if (rust) {
     return {
       name: rust.name || fallbackName,
@@ -42,7 +47,7 @@ export async function detectProjectEnvironment(targetDir: string): Promise<Detec
     };
   }
 
-  const go = await detectGo(targetDir);
+  const go = await detectGo(fs);
   if (go) {
     return {
       name: go.name || fallbackName,
@@ -52,7 +57,7 @@ export async function detectProjectEnvironment(targetDir: string): Promise<Detec
     };
   }
 
-  const python = await detectPython(targetDir);
+  const python = await detectPython(fs);
   if (python) {
     return {
       name: fallbackName,
@@ -62,7 +67,7 @@ export async function detectProjectEnvironment(targetDir: string): Promise<Detec
     };
   }
 
-  const java = await detectJava(targetDir);
+  const java = await detectJava(fs);
   if (java) {
     return {
       name: fallbackName,

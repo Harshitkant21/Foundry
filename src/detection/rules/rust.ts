@@ -1,11 +1,9 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { ProjectFileSystem } from '../../io/scanner.js';
 import { DetectionCandidate } from './node.js';
 
-export async function detectRust(targetDir: string): Promise<DetectionCandidate | null> {
-  const cargoToml = path.join(targetDir, 'Cargo.toml');
+export async function detectRust(fs: ProjectFileSystem): Promise<DetectionCandidate | null> {
   try {
-    const raw = await fs.readFile(cargoToml, 'utf-8');
+    const raw = await fs.readFile('Cargo.toml');
     const nameMatch = raw.match(/name\s*=\s*["']([^"']+)["']/);
     const projName = nameMatch && nameMatch[1] ? nameMatch[1] : undefined;
 

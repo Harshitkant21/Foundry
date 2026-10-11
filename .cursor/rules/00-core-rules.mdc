@@ -1,11 +1,19 @@
 ---
-description: Core Architecture Rules for create-ai-workspace CLI
+description: Core Architecture & Governance Rules for Foundry (create-foundry-workspace)
 globs: src/**/*.ts
 alwaysApply: true
 ---
-# Core Rules for `create-ai-workspace`
+# Foundry Cursor Rules (`create-foundry-workspace`)
 
-1. **Zero LLM / Zero Network:** No external API calls or LLM dependencies.
-2. **Deterministic Output:** Same flags = identical byte output. No dynamic dates/timestamps.
-3. **Strict TypeScript:** No `any`. Use Zod schema validation.
-4. **Minimal Output:** Scaffold only essential, non-empty files.
+## Mandatory Operating Protocol
+You MUST adhere strictly to:
+1. [`.ai/rules/guardrails.md`](file:///d:/Extentions/Foundry/.ai/rules/guardrails.md) — Non-negotiable Git safety, zero-LLM core, pure core I/O isolation.
+2. [`.ai/context/project-context.md`](file:///d:/Extentions/Foundry/.ai/context/project-context.md) — Canonical project context, layer model, and architecture map.
+3. [`AGENTS.md`](file:///d:/Extentions/Foundry/AGENTS.md) — Master AI operating contract.
+
+## Core Engineering Rules
+1. **Zero-LLM Core:** No external API calls, AI SDKs, or network dependencies in `src/`.
+2. **Deterministic Output:** Same flags/inputs = identical byte output. No dynamic dates/timestamps.
+3. **Pure Core:** No `node:fs` imports in `src/core/`, `src/adapters/`, or `src/templates/`.
+4. **Strict TypeScript:** No `any`. Strict static typing and Zod schema validation.
+5. **Git Safety:** Read-only Git by default. No unauthorized commits, pushes, or resets.

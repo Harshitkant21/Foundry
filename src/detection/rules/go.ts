@@ -1,11 +1,10 @@
-import fs from 'node:fs/promises';
 import path from 'node:path';
+import { ProjectFileSystem } from '../../io/scanner.js';
 import { DetectionCandidate } from './node.js';
 
-export async function detectGo(targetDir: string): Promise<DetectionCandidate | null> {
-  const goMod = path.join(targetDir, 'go.mod');
+export async function detectGo(fs: ProjectFileSystem): Promise<DetectionCandidate | null> {
   try {
-    const raw = await fs.readFile(goMod, 'utf-8');
+    const raw = await fs.readFile('go.mod');
     const match = raw.match(/module\s+([^\s]+)/);
     const modName = match && match[1] ? path.basename(match[1]) : undefined;
 

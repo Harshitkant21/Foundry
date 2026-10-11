@@ -1,0 +1,13 @@
+version: "1"
+
+project:
+  name: "go-cli-tool"
+  type: "cli"
+  language: "go"
+
+repository: "github"
+strictness: "standard"
+
+adapters:
+  - agents
+  - cursor

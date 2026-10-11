@@ -55,17 +55,23 @@ describe('Golden Fixtures Byte-for-Byte Determinism', () => {
   ];
 
   beforeAll(async () => {
-    // Generate fresh fixtures
-    for (const profile of profiles) {
-      const profileDir = path.join(fixturesDir, profile.id);
-      await fs.rm(profileDir, { recursive: true, force: true });
-      const context = buildResolvedContext(profile.config);
-      const files = generateWorkspace(context, defaultRegistry);
+    const hasFixtures = await fs
+      .access(fixturesDir)
+      .then(() => true)
+      .catch(() => false);
 
-      for (const file of files) {
-        const filePath = path.join(profileDir, file.relativePath);
-        await fs.mkdir(path.dirname(filePath), { recursive: true });
-        await fs.writeFile(filePath, file.content, 'utf-8');
+    if (process.env.UPDATE_SNAPSHOTS === 'true' || !hasFixtures) {
+      for (const profile of profiles) {
+        const profileDir = path.join(fixturesDir, profile.id);
+        await fs.rm(profileDir, { recursive: true, force: true });
+        const context = buildResolvedContext(profile.config);
+        const files = generateWorkspace(context, defaultRegistry);
+
+        for (const file of files) {
+          const filePath = path.join(profileDir, file.relativePath);
+          await fs.mkdir(path.dirname(filePath), { recursive: true });
+          await fs.writeFile(filePath, file.content, 'utf-8');
+        }
       }
     }
   });

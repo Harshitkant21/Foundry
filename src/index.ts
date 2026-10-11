@@ -7,5 +7,6 @@ export * from './core/context.js';
 export * from './core/generator.js';
 export * from './core/interpolator.js';
 export * from './io/paths.js';
+export * from './io/scanner.js';
 export * from './io/writer.js';
 export * from './cli/command.js';

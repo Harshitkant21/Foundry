@@ -40,7 +40,11 @@ coverage/
 .nyc_output/
 *.lcov
 .vitest/
-tests/fixtures/
+
+# ==============================================================================
+# Internal Documentation & Vision (Never Tracked or Pushed to GitHub)
+# ==============================================================================
+.internal/
 
 # ==============================================================================
 # Packaging & Release Archives
